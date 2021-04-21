@@ -99,14 +99,13 @@ app.post('/Amin/submit', bodypars, (req, res) => {
 
             axios({
                 method: 'get',
-                // 8081 müsste hier eigentlich noch weg 
                 url: ':5000/informations' + req.originalUrl
             }).then(function (response) {
                 const antwort = response
             
                 console.log(antwort)
             
-                // speichern in der DB und zurück zu Amin 
+                // speichern in der DB 
 
                 const save = Analytics.create(
                     { type_analytics: req.body.case, result: antwort },

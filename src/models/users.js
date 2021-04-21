@@ -44,7 +44,7 @@ Form.init({
         type: Sequelize.STRING,
         allowNull: true
     },
-    usecase: {
+    attr: {
         type: Sequelize.STRING,
         allowNull: false
     }
