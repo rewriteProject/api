@@ -11,14 +11,13 @@ const { Model, UUID } = require("sequelize")
 import axios from 'axios';
 import { format } from 'sequelize/types/lib/utils';
 
-const porta = 3000;
-app.listen(porta, () => {
-    console.log("Server Started");
-})
+const server_port = process.env.SERVER_PORT;
+const chris_port = process.env.CHRIS_PORT;
+const chris_host = process.env.CHRIS_HOST;
+const lisa_port = process.env.LISA_PORT;
+const lisa_host = process.env.LISA_HOST;
 
-var list = []
-
-// 
+var list = [];
 
 app.get('Amin/onLoad/countries', function(req, res) {  
     // send to Amin
@@ -28,7 +27,7 @@ app.get('Amin/onLoad/countries', function(req, res) {
         // auf die url von Chris seiner DB res = JSON mit allen Ländern
         method: 'get',
         // 8081 müsste hier eigentlich noch weg 
-        url: ':8081/onload/countries',
+        url: chris_host + ':' + chris_port + '/onload/countries',
         responseType: 'json'
     }).then(function (response) {
         const antwort = response
@@ -43,7 +42,7 @@ app.get('Amin/onLoad/properties', function(req, res) {
     axios({
         method: 'get',
         // 8081 müsste hier eigentlich noch weg 
-        url: ':8081/onload/properties',
+        url: chris_host + ':' + chris_port + '/onload/properties',
         responseType: 'json'
     }).then(function (response) {
         const antwort = response
@@ -76,7 +75,7 @@ app.post('/Amin/submit', bodypars, (req, res) => {
             axios({
                 method: 'get',
                 // 8081 müsste hier eigentlich noch weg 
-                url: ':5000/informations' + req.originalUrl
+                url: lisa_host + ':' + lisa_port + '/informations' + req.originalUrl
             }).then(function (response) {
                 const antwort = response
             
@@ -99,7 +98,7 @@ app.post('/Amin/submit', bodypars, (req, res) => {
 
             axios({
                 method: 'get',
-                url: ':5000/informations' + req.originalUrl
+                url: lisa_host + ':' + lisa_port + '/informations' + req.originalUrl
             }).then(function (response) {
                 const antwort = response
             
@@ -126,7 +125,7 @@ app.post('/Amin/submit', bodypars, (req, res) => {
            axios({
                 method: 'get',
                 // 8081 müsste hier eigentlich noch weg 
-                url: ':5000/statistics' + req.originalUrl
+                url: lisa_host + ':' + lisa_port + '/statistics' + req.originalUrl
             }).then(function (response) {
                 const antwort = response
         
@@ -150,7 +149,7 @@ app.post('/Amin/submit', bodypars, (req, res) => {
             axios({
                 method: 'get',
                 // 8081 müsste hier eigentlich noch weg 
-                url: ':5000/predictions' + req.originalUrl
+                url: lisa_host + ':' + lisa_port + '/predictions' + req.originalUrl
             }).then(function (response) {
                 
                 const antwort = response
@@ -177,7 +176,7 @@ app.post('/Amin/submit', bodypars, (req, res) => {
             axios({
                 method: 'get',
                 // 8081 müsste hier eigentlich noch weg 
-                url: ':5000/predictions' + req.originalUrl
+                url: lisa_host + ':' + lisa_port + '/predictions' + req.originalUrl
             }).then(function (response) {
                 
                 const antwort = response
@@ -212,3 +211,7 @@ app.post('/Amin/submit', bodypars, (req, res) => {
 // Form.find oder
 //const id = Form.getDataValue(uuid)
 //console.log(id)
+
+app.listen(server_port, () => {
+    console.log("Server Started");
+})
