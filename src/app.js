@@ -90,7 +90,7 @@ app.post('/Amin/submit', (req, res) => {
 
             axios({
                 method: 'get',
-                url:':' + lisa_port + '/informations' + req.originalUrl
+                url:lisa_host + ':' + lisa_port + '/informations' + req.originalUrl
             }).then(function (response) {
                 const antwort = response
             
@@ -117,7 +117,7 @@ app.post('/Amin/submit', (req, res) => {
            axios({
                 method: 'get',
                 // 8081 müsste hier eigentlich noch weg 
-                url:':' + lisa_port + '/statistics' + req.originalUrl
+                url:lisa_host + ':' + lisa_port + '/statistics' + req.originalUrl
             }).then(function (response) {
                 const antwort = response
         
@@ -141,7 +141,7 @@ app.post('/Amin/submit', (req, res) => {
             axios({
                 method: 'get',
                 // 8081 müsste hier eigentlich noch weg 
-                url:':' + lisa_port + '/predictions' + req.originalUrl
+                url:lisa_host + ':' + lisa_port + '/predictions' + req.originalUrl
             }).then(function (response) {
                 
                 const antwort = response
@@ -168,7 +168,7 @@ app.post('/Amin/submit', (req, res) => {
             axios({
                 method: 'get',
                 // 8081 müsste hier eigentlich noch weg 
-                url:':' + lisa_port + '/predictions' + req.originalUrl
+                url:lisa_host + ':' + lisa_port + '/predictions' + req.originalUrl
             }).then(function (response) {
                 
                 const antwort = response
