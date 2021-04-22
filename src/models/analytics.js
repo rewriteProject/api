@@ -13,18 +13,15 @@ Analytics.init({
         allowNull: false
     },
     id_result: {
-        type: Sequelize.STRING,
-        autoIncrement: true,
+        type: Sequelize.INTEGER,
         primaryKey: true
     },
     type_analytics:{
         type: Sequelize.STRING,
-        autoIncrement: true,
         allowNull: false
     },
     result:{
-        type: Sequelize.DATE,
-        autoIncrement: true,
+        type: Sequelize.STRING,
         allowNull: true
     }
 },{
