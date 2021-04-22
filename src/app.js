@@ -1,15 +1,7 @@
-const { database } = require("./config/database.config");
 const express = require("express");
-const { response, request, Router } = require("express");
-const {Form, User, Analytics} = require("./models/users");
-const bodyParser = require('body-parser');
-const { noExtendLeft } = require("sequelize/types/lib/operators");  
+const { Analytics } = require("./models/analytics");
 const app = express();
-const { database } = require("../config/database.config")
-const Sequelize = require("sequelize")
-const { Model, UUID } = require("sequelize")
-import axios from 'axios';
-import { format } from 'sequelize/types/lib/utils';
+const axios = require('axios');
 
 const server_port = process.env.SERVER_PORT;
 const chris_port = process.env.CHRIS_PORT;
@@ -51,7 +43,7 @@ app.get('Amin/onLoad/properties', function(req, res) {
    
 });
 
-app.post('/Amin/submit', bodypars, (req, res) => {
+app.post('/Amin/submit', (req, res) => {
 
     try {
         
