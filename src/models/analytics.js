@@ -9,11 +9,11 @@ class Analytics extends Model{
 Analytics.init({
     id_user: {
         type: Sequelize.INTEGER,
-        autoIncrement: true,
         allowNull: false
     },
     id_result: {
         type: Sequelize.INTEGER,
+        autoIncrement: true,
         primaryKey: true
     },
     type_analytics:{

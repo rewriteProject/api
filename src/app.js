@@ -76,7 +76,7 @@ app.post('/Amin/submit', (req, res) => {
                 // speichern in der DB und zurück zu Amin 
             
                 const save = Analytics.create(
-                    { type_analytics: req.body.case, result: antwort },
+                    { id_user: 1, type_analytics: req.body.case, result: antwort },
                 )
 
                 res.send(antwort)
@@ -99,7 +99,7 @@ app.post('/Amin/submit', (req, res) => {
                 // speichern in der DB 
 
                 const save = Analytics.create(
-                    { type_analytics: req.body.case, result: antwort },
+                    { id_user: 1, type_analytics: req.body.case, result: antwort },
                 )
             
                 res.send(antwort)
@@ -126,7 +126,7 @@ app.post('/Amin/submit', (req, res) => {
                 // speichern in der DB und zurück zu Amin 
 
                 const save = Analytics.create(
-                    { type_analytics: req.body.case, result: antwort },
+                    {id_user: 1, type_analytics: req.body.case, result: antwort },
                 )
         
                 res.send(antwort)
@@ -151,7 +151,7 @@ app.post('/Amin/submit', (req, res) => {
                 // speichern in der DB und zurück zu Amin 
 
                 const save = Analytics.create(
-                    { type_analytics: req.body.case, result: antwort },
+                    { id_user: 1, type_analytics: req.body.case, result: antwort },
                 )
             
                 res.send(antwort)
@@ -178,7 +178,7 @@ app.post('/Amin/submit', (req, res) => {
                 // speichern in der DB und zurück zu Amin 
 
                 const save = Analytics.create(
-                    { type_analytics: req.body.case, result: antwort },
+                    { id_user: 1, type_analytics: req.body.case, result: antwort },
                 )
             
                 res.send(antwort)
