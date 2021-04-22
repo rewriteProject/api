@@ -19,7 +19,7 @@ app.get('Amin/onLoad/countries', function(req, res) {
         // auf die url von Chris seiner DB res = JSON mit allen Ländern
         method: 'get',
         // 8081 müsste hier eigentlich noch weg 
-        url: chris_host + ':' + chris_port + '/onload/countries',
+        url: chris_host + ':' + chris_port + '/onLoad/countries',
         responseType: 'json'
     }).then(function (response) {
         const antwort = response
@@ -34,7 +34,7 @@ app.get('Amin/onLoad/properties', function(req, res) {
     axios({
         method: 'get',
         // 8081 müsste hier eigentlich noch weg 
-        url: chris_host + ':' + chris_port + '/onload/properties',
+        url: chris_host + ':' + chris_port + '/onLoad/properties',
         responseType: 'json'
     }).then(function (response) {
         const antwort = response
@@ -90,7 +90,7 @@ app.post('/Amin/submit', (req, res) => {
 
             axios({
                 method: 'get',
-                url: lisa_host + ':' + lisa_port + '/informations' + req.originalUrl
+                url:':' + lisa_port + '/informations' + req.originalUrl
             }).then(function (response) {
                 const antwort = response
             
@@ -117,7 +117,7 @@ app.post('/Amin/submit', (req, res) => {
            axios({
                 method: 'get',
                 // 8081 müsste hier eigentlich noch weg 
-                url: lisa_host + ':' + lisa_port + '/statistics' + req.originalUrl
+                url:':' + lisa_port + '/statistics' + req.originalUrl
             }).then(function (response) {
                 const antwort = response
         
@@ -141,7 +141,7 @@ app.post('/Amin/submit', (req, res) => {
             axios({
                 method: 'get',
                 // 8081 müsste hier eigentlich noch weg 
-                url: lisa_host + ':' + lisa_port + '/predictions' + req.originalUrl
+                url:':' + lisa_port + '/predictions' + req.originalUrl
             }).then(function (response) {
                 
                 const antwort = response
@@ -168,7 +168,7 @@ app.post('/Amin/submit', (req, res) => {
             axios({
                 method: 'get',
                 // 8081 müsste hier eigentlich noch weg 
-                url: lisa_host + ':' + lisa_port + '/predictions' + req.originalUrl
+                url:':' + lisa_port + '/predictions' + req.originalUrl
             }).then(function (response) {
                 
                 const antwort = response
